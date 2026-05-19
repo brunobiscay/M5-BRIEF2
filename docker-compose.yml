@@ -1,14 +1,13 @@
-
 services:
   backend:
     build: ./backend
-    container_name: backend
+    image: ${DOCKER_USERNAME}/m5-brief2-backend:${APP_VERSION}
     ports:
       - "8000:8000"
 
   frontend:
     build: ./frontend
-    container_name: frontend
+    image: ${DOCKER_USERNAME}/m5-brief2-frontend:${APP_VERSION}
     ports:
       - "8501:8501"
     depends_on:
